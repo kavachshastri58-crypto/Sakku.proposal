@@ -1,0 +1,253 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  overflow-x:hidden;
+  overflow-y:auto;
+  height:100vh;
+
+  background:linear-gradient(
+    135deg,
+    #141e30,
+    #243b55,
+    #ff4d6d,
+    #ff758f
+  );
+
+  background-size:400% 400%;
+  animation:gradientMove 12s ease infinite;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  position:relative;
+}
+
+@keyframes gradientMove{
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+
+.bg-hearts{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  z-index:0;
+}
+
+.heart{
+  position:absolute;
+  bottom:-50px;
+  color:rgba(255,255,255,0.7);
+  animation:float linear infinite;
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+
+  10%{
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-120vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+.intro-screen{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+
+  z-index:100;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+
+  text-align:center;
+  color:white;
+
+  padding:20px;
+}
+
+.intro-screen h1{
+  font-size:3rem;
+  animation:bounce 1s infinite;
+}
+
+.intro-screen p{
+  margin-top:20px;
+  line-height:1.8;
+  max-width:500px;
+}
+
+#startBtn{
+  margin-top:30px;
+  padding:15px 35px;
+  border:none;
+  border-radius:40px;
+  background:white;
+  color:#ff4d6d;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.card{
+  width:90%;
+  max-width:520px;
+
+  padding:35px;
+
+  border-radius:30px;
+
+  background:rgba(255,255,255,0.18);
+  backdrop-filter:blur(14px);
+
+  box-shadow:0 10px 40px rgba(0,0,0,0.2);
+
+  text-align:center;
+  color:white;
+
+  z-index:5;
+
+  animation:pop 1s ease;
+}
+
+@keyframes pop{
+  from{
+    transform:scale(0.7);
+    opacity:0;
+  }
+
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+#warningPage,
+#confessionPage,
+#proposalPage{
+  display:none;
+}
+
+h1{
+  margin-bottom:20px;
+  font-size:2.2rem;
+}
+
+p{
+  line-height:1.7;
+  margin-bottom:25px;
+}
+
+.btns{
+  position:relative;
+  height:120px;
+}
+
+button{
+  border:none;
+  padding:14px 30px;
+  border-radius:40px;
+  font-size:1rem;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+  position:absolute;
+}
+
+#continueBtn,
+#confessYes,
+#yesBtn{
+  background:white;
+  color:#ff4d6d;
+
+  left:30%;
+  transform:translateX(-50%);
+}
+
+#leaveBtn,
+#confessNo,
+#noBtn{
+  background:#ff1744;
+  color:white;
+
+  left:70%;
+  transform:translateX(-50%);
+}
+
+.message{
+  margin-top:20px;
+  min-height:40px;
+  font-size:1.2rem;
+  font-weight:bold;
+}
+
+.insta-box{
+  margin-top:25px;
+}
+
+.insta-box a{
+  text-decoration:none;
+  background:white;
+  color:#ff4d6d;
+
+  padding:12px 24px;
+  border-radius:30px;
+
+  font-weight:bold;
+}
+
+@keyframes bounce{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+}
+
+.floating{
+  position:absolute;
+  color:white;
+  font-weight:bold;
+  animation:rise 5s linear forwards;
+}
+
+@keyframes rise{
+  0%{
+    transform:translateY(0);
+    opacity:0;
+  }
+
+  10%{
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-250px);
+    opacity:0;
+  }
+}
